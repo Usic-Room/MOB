@@ -17,7 +17,7 @@ let project = Project(
                     "BASE_URL": "$(BASE_URL)",
                 ]
             ),
-            sources: ["UsicRoom/Sources/**"],
+            sources: ["UsicRoom/**/*.swift"],
             resources: ["UsicRoom/Resources/**"],
             dependencies: [
                 .external(name: "ComposableArchitecture")
@@ -43,7 +43,7 @@ let project = Project(
                     "BASE_URL": "$(BASE_URL)",
                 ]
             ),
-            sources: ["UsicRoom/Tests/**"],
+            sources: ["UsicRoomTests/**"],
             resources: [],
             dependencies: [
                 .target(name: "UsicRoom"),
