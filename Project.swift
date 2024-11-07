@@ -10,22 +10,55 @@ let project = Project(
             bundleId: "io.tuist.UsicRoom",
             infoPlist: .extendingDefault(
                 with: [
-                    "UILaunchStoryboardName": "LaunchScreen.storyboard",
+                    "UILaunchScreen": [
+                        "UIColorName": "",
+                        "UIImageName": "",
+                    ],
+                    "BASE_URL": "$(BASE_URL)",
                 ]
             ),
             sources: ["UsicRoom/Sources/**"],
             resources: ["UsicRoom/Resources/**"],
-            dependencies: []
+            dependencies: [
+                .external(name: "ComposableArchitecture")
+            ],
+            settings: Settings.settings(
+                base: [
+                "DEVELOPMENT_TEAM": "$(DEVELOPMENT_TEAM)"
+                ],
+                configurations: [
+                    .debug(name: "Debug", xcconfig: .relativeToRoot("Configs/Debug.xcconfig")),
+                    .release(name: "Release", xcconfig: .relativeToRoot("Configs/Release.xcconfig"))
+                ],
+                defaultSettings: .recommended
+            )
         ),
         .target(
             name: "UsicRoomTests",
             destinations: .iOS,
             product: .unitTests,
             bundleId: "io.tuist.UsicRoomTests",
-            infoPlist: .default,
+            infoPlist: .extendingDefault(
+                with: [
+                    "BASE_URL": "$(BASE_URL)",
+                ]
+            ),
             sources: ["UsicRoom/Tests/**"],
             resources: [],
-            dependencies: [.target(name: "UsicRoom")]
+            dependencies: [
+                .target(name: "UsicRoom"),
+                .external(name: "ComposableArchitecture")
+            ],
+            settings: Settings.settings(
+                base: [
+                "DEVELOPMENT_TEAM": "$(DEVELOPMENT_TEAM)"
+                ],
+                configurations: [
+                    .debug(name: "Debug", xcconfig: .relativeToRoot("Configs/Debug.xcconfig")),
+                    .release(name: "Release", xcconfig: .relativeToRoot("Configs/Release.xcconfig"))
+                ],
+                defaultSettings: .recommended
+            )
         ),
     ]
 )
