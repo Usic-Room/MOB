@@ -8,12 +8,12 @@ gen:
 	tuist generate
 
 clean:
-	rm -rf Tuist/Package.resolved
-	rm -rf ~/.tuist/Cache
-	rm -rf ~/Library/Caches/tuist
 	tuist clean
 
 fclean: clean
+	rm -rf Tuist/Package.resolved
+	rm -rf ~/.tuist/Cache
+	rm -rf ~/Library/Caches/tuist
 	rm -rf **/**/**/*.xcodeproj
 	rm -rf **/**/*.xcodeproj
 	rm -rf **/*.xcodeproj
