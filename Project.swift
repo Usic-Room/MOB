@@ -15,6 +15,10 @@ let project = Project(
                         "UIImageName": "",
                     ],
                     "BASE_URL": "$(BASE_URL)",
+                    "HOME_URL": "$(HOME_URL)",
+                    "SEARCH_URL": "$(SEARCH_URL)",
+                    "LIBRARY_URL": "$(LIBRARY_URL)",
+                    "LOGIN_URL": "$(LOGIN_URL)",
                 ]
             ),
             sources: ["UsicRoom/**/*.swift"],
@@ -41,6 +45,10 @@ let project = Project(
             infoPlist: .extendingDefault(
                 with: [
                     "BASE_URL": "$(BASE_URL)",
+                    "HOME_URL": "$(HOME_URL)",
+                    "SEARCH_URL": "$(SEARCH_URL)",
+                    "LIBRARY_URL": "$(LIBRARY_URL)",
+                    "LOGIN_URL": "$(LOGIN_URL)",
                 ]
             ),
             sources: ["UsicRoomTests/**"],
