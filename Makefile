@@ -22,7 +22,7 @@ fclean: clean
 	find . -name "DerivedData" -exec rm -rf {} +
 	find . -name "Derived" -exec rm -rf {} +
 
-re: fclean gen
+re: clean gen
 
 # ---- graph ---- #
 graph:
