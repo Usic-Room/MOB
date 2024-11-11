@@ -7,7 +7,7 @@ let project = Project(
             name: "UsicRoom",
             destinations: .iOS,
             product: .app,
-            bundleId: "io.tuist.UsicRoom",
+            bundleId: "com.dude.UsicRoom",
             infoPlist: .extendingDefault(
                 with: [
                     "UILaunchScreen": [
@@ -41,7 +41,7 @@ let project = Project(
             name: "UsicRoomTests",
             destinations: .iOS,
             product: .unitTests,
-            bundleId: "io.tuist.UsicRoomTests",
+            bundleId: "com.dude.UsicRoomTests",
             infoPlist: .extendingDefault(
                 with: [
                     "BASE_URL": "$(BASE_URL)",
